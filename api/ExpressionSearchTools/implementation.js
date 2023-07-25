@@ -62,7 +62,7 @@ function init_qfbNotRepliedButton(wind) {
   repButton.setAttribute("label", "Unreplied");
   repButton.setAttribute("tooltiptext", "Filter for unreplied messages");
   repButton.setAttribute("crop", "none");
-  repButton.setAttribute("image", "resource://expressionsearch/skin/noreply1black.svg");
+  repButton.setAttribute("image", "resource://expressionsearch/skin/unreplied.svg");
   repButton.class = "toolbarbutton-1";
   repButton.setAttribute("style", "min-width:16px");
   hbox.appendChild(repButton);
