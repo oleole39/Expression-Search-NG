@@ -50,7 +50,7 @@ var ExpressionSearch = class extends ExtensionCommon.ExtensionAPI {
     let wind = Services.wm.getMostRecentWindow("mail:3pane");
 
 
-    if (typeof (wind) != "undefined") {
+    if (wind != null) { // checks that 'wind' is neither null nor undefined, cf. https://stackoverflow.com/questions/2559318/how-to-check-for-an-undefined-or-null-variable-in-javascript#answer-15992131
       let prefersDarkMode = wind.matchMedia("(prefers-color-scheme:dark)").matches; //  in  91:    -moz-toolbar-prefers-color-scheme:dark
    //   console.log("dark", prefersDarkMode);
       if (prefersDarkMode)
