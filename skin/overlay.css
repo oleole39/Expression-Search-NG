@@ -5,15 +5,17 @@
 :root {
   --ESNG-color-transparent: transparent;
   --ESNG-color-white-0: white;
-  --ESNG-color-white-1: #ffffe1;
-  --ESNG-color-yellow: yellow;
+  --ESNG-color-white-1: #FFFFE1;
+  --ESNG-color-yellow-0: yellow;
+  --ESNG-color-yellow-1: #FBEAA0;
   --ESNG-color-blue-0: lightblue;
   --ESNG-color-blue-1: blue;
   --ESNG-color-green-0: lightgreen;
   --ESNG-color-green-1: green;
-  --ESNG-color-red-0: #f66;
+  --ESNG-color-red-0: #F66;
   --ESNG-color-red-1: red;
-  --ESNG-color-grey: grey;
+  --ESNG-color-grey-0: grey;
+  --ESNG-color-grey-1: #404040;
   --ESNG-color-purple: purple;
   --ESNG-color-black: black;
 }
@@ -24,6 +26,7 @@
 :host,
 :root {
   --ESNG-overlay-background-0: var(--ESNG-color-transparent);
+  --ESNG-overlay-background-1: var(--ESNG-color-yellow-1);
 
   --ESNG-overlay-color-0: var(--ESNG-color-blue-1);
   --ESNG-overlay-color-1: var(--ESNG-color-green-1);
@@ -31,7 +34,7 @@
   --ESNG-overlay-color-3: var(--ESNG-color-purple);
   --ESNG-overlay-color-4: var(--ESNG-color-red-0);
   --ESNG-overlay-color-5: var(--ESNG-color-white-1);
-  --ESNG-overlay-color-6: var(--ESNG-color-grey);
+  --ESNG-overlay-color-6: var(--ESNG-color-grey-0);
   --ESNG-overlay-color-7: var(--ESNG-color-green-1);
   --ESNG-overlay-color-8: var(--ESNG-color-black);
 
@@ -45,11 +48,12 @@
   :host,
   :root {
   --ESNG-overlay-background-0: var(--ESNG-color-transparent);
+  --ESNG-overlay-background-1: var(--ESNG-color-grey-1);
 
   --ESNG-overlay-color-0: var(--ESNG-color-blue-0);
   --ESNG-overlay-color-1: var(--ESNG-color-green-0);
   --ESNG-overlay-color-2: var(--ESNG-color-white-0);
-  --ESNG-overlay-color-3: var(--ESNG-color-yellow);
+  --ESNG-overlay-color-3: var(--ESNG-color-yellow-0);
   --ESNG-overlay-color-4: var(--ESNG-color-red-0);
   --ESNG-overlay-color-5: var(--ESNG-color-white-1);
   --ESNG-overlay-color-6: var(--ESNG-color-white-0);
@@ -74,9 +78,8 @@
   font-size: large;
 }
 
-/* InfoBackground, the CSS2 color was deprecated, is black in Ubuntu */
 #expression-search-tooltip.forceInfo {
-  background-color: var(--ESNG-overlay-color-5) !important;
+  background-color: var(--ESNG-overlay-background-1) !important;
   -moz-appearance: none !important;
 }
 
