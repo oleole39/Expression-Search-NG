@@ -3,10 +3,10 @@
     "gecko": {
       "id": "expressionsearch@opto.one",
       "strict_min_version": "91.0",
-      "strict_max_version": "112.0"
+      "strict_max_version": "115.1"
     }
   },
-  "version": "3.8.11",
+  "version": "4.0.0-WIP",
   "manifest_version": 2,
   "name": "Expression Search - NG",
   "description": "Type 'from:fred to:tom' or 'f:fred t:tom' to see all messages from Fred to Tom in the current view.",
