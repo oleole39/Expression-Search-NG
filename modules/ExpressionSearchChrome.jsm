@@ -1130,10 +1130,12 @@ var ExpressionSearchChrome = {
     status_bar.insertBefore(tooltip, null);
     win._expression_search.createdElements.push(tooltip);
 
-    // Fix tooltip background color issue on Ubuntu
+    //@FIX [ESNG 3.8.12] - Tooltip background color defaults to rgb(251, 234, 160) as a TB hardcoded variable named 'Infobackground' (cf. https://searchfox.org/comm-central/source/mozilla/toolkit/content/xul.css#381 and https://searchfox.org/comm-central/source/mozilla/widget/nsXPLookAndFeel.cpp#664). 
+    //                     Now applying 'forceInfo' class systematically to be able to define the color via ESNG CSS stylesheet.
     if (tooltip && tooltip.classList) {
-      let color = win.getComputedStyle(tooltip, null).getPropertyValue("background-color"); // string: rgb(255, 255, 225)
-      if (color == 'transparent') tooltip.classList.add("forceInfo");
+      //let color = win.getComputedStyle(tooltip, null).getPropertyValue("background-color"); // string: rgb(255, 255, 225)
+	  //if (color == 'transparent') tooltip.classList.add("forceInfo");
+      tooltip.classList.add("forceInfo");
     }
   },
 

@@ -10,66 +10,16 @@
 -->
 
 <html>
-
-<style>
-  .button {
-    background-color: lightgrey;
-    /* Green */
-    border: none;
-    color: black;
-    padding: 8px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-
-  .button1 {
-    border-radius: 2px;
-  }
-
-  .button2 {
-    border-radius: 4px;
-  }
-
-  .button3 {
-    border-radius: 8px;
-  }
-
-  .button4 {
-    border-radius: 12px;
-  }
-
-  .button5 {
-    border-radius: 50%;
-  }
-
-
-  .vl {
-    border-left: 6px solid green;
-    margin-right: 4px;
-
-  }
-</style>
-
-
-
-
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>Expression Search - Query Builder</title>
-
-
-
-
+  <link rel="stylesheet" href="popups.css" type="text/css">
 </head>
 
 <body lang=DE>
   <div>
-    Scroll messagelist up or down: <button class="button ">Up</button> <button class="button ">Down</button>
-    <span style = "float: right;">Search cockpit: fix/keep on top <input id ="ontop" value = "false" type = "checkbox" class="button">
+    Scroll messagelist up or down: <button class="searchops-button ">Up</button> <button class="searchops-button ">Down</button>
+    <span style = "float: right;">Search cockpit: fix/keep on top <input id ="ontop" value = "false" type = "checkbox" class="searchops-button">
     </span>
     <hr>
     <b>Click button to enter search operator into searchbox and then enter searchterm: </b>
@@ -79,57 +29,63 @@
       placeholder="Enter search operator by mouse or keyboard, followed by searchterm. Can be followed by more pairs of operator:searchterm" />
 
     <br>
-    <button class="button button2" data="from">from</button>
-    <button class="button button2" data="to">to</button>
-    <button class="button button2" data="cc">cc</button>
-    <button class="button button2" data="bcc">bcc</button>
-    <button class="button button2" data="tonocc">to-nocc</button>
-    <button class="button button2" data="only">only</button>
-    <button class="button button2" data="fromto">from-to</button>
-    <button class="button button2" data="-from">not from</button>
-    <button class="button button2" data="-to">not to</button>
+    <div id="searchops-group-1" class="searchops-group">
+        <button class="searchops-button searchops-button2" data="from">from</button>
+        <button class="searchops-button searchops-button2" data="to">to</button>
+        <button class="searchops-button searchops-button2" data="cc">cc</button>
+        <button class="searchops-button searchops-button2" data="bcc">bcc</button>
+        <button class="searchops-button searchops-button2" data="tonocc">to-nocc</button>
+        <button class="searchops-button searchops-button2" data="only">only</button>
+        <button class="searchops-button searchops-button2" data="fromto">from-to</button>
+        <button class="searchops-button searchops-button2" data="-from">not from</button>
+        <button class="searchops-button searchops-button2" data="-to">not to</button>
+    </div>
     <span class="vl"></span>
-    <button class="button button1" data="subject">subject</button>
-    <button class="button button1" data="simple">subject w spec chars</button>
+    <div id="searchops-group-2" class="searchops-group">
+        <button class="searchops-button searchops-button1" data="subject">subject</button>
+        <button class="searchops-button searchops-button1" data="simple">subject w spec chars</button>
+    </div>
     <span class="vl"></span>
-    <button class="button button3" data="date">date</button>
-    <button class="button button3" data="age">age</button>
-    <button class="button button3" data="older_than">older than</button>
-    <button class="button button3" data="newer_than">newer than</button>
-    <button class="button button3" data="before">before</button>
-    <button class="button button3" data="after">after</button>
+    <div id="searchops-group-3" class="searchops-group">
+        <button class="searchops-button searchops-button3" data="date">date</button>
+        <button class="searchops-button searchops-button3" data="age">age</button>
+        <button class="searchops-button searchops-button3" data="older_than">older than</button>
+        <button class="searchops-button searchops-button3" data="newer_than">newer than</button>
+        <button class="searchops-button searchops-button3" data="before">before</button>
+        <button class="searchops-button searchops-button3" data="after">after</button>
+    </div>
     <span class="vl"></span>
-    <button class="button button4" data="size">size</button>
-    <button class="button button4" data="larger">larger</button>
-    <button class="button button4" data="smaller">smaller</button>
-    <button class="button button4" data="">attachment</button>
-    <button class="button button4" data="filename">filename</button>
+    <div id="searchops-group-4" class="searchops-group">
+        <button class="searchops-button searchops-button4" data="size">size</button>
+        <button class="searchops-button searchops-button4" data="larger">larger</button>
+        <button class="searchops-button searchops-button4" data="smaller">smaller</button>
+        <button class="searchops-button searchops-button4" data="">attachment</button>
+        <button class="searchops-button searchops-button4" data="filename">filename</button>
+    </div>
     <span class="vl"></span>
-    <button class="button button2" data="is">is</button>
-    <button class="button button3" data="status">status</button>
-    <button class="button button4" data="body">body</button>
-
-    <button class="button button1" data="label">tag</button>
-    <button class="button button2" data="all">all</button>
+    <div id="searchops-group-5" class="searchops-group">
+        <button class="searchops-button searchops-button2" data="is">is</button>
+        <button class="searchops-button searchops-button3" data="status">status</button>
+        <button class="searchops-button searchops-button4" data="body">body</button>
+        <button class="searchops-button searchops-button1" data="label">tag</button>
+        <button class="searchops-button searchops-button2" data="all">all</button>
+    </div>
     <span class="vl"></span>
-    <button class="button button2" data="g">Gloda-search</button>
-
-
+    <div id="searchops-group-6" class="searchops-group">
+        <button class="searchops-button searchops-button2" data="g">Gloda-search</button>
+    </div>
     <span class="vl"></span>
 
     <p>These must be in last position:</p>
-    <button class="button button5" data="regex">subject-regex</button>
-    <button class="button button5" data="headerre">header-regex</button>
-    <button class="button button5" data="fromre">from-regex</button>
-    <button class="button button5" data="bodyre">body-regex</button>
-    <button class="button button5" data="tore">to-regex</button>
-    <button class="button button5" data="xnote" id = "xnote">XNote-search</button>
-
-
-
-
+    <div id="searchops-group-7" class="searchops-group">    
+        <button class="searchops-button searchops-button5" data="regex">subject-regex</button>
+        <button class="searchops-button searchops-button5" data="headerre">header-regex</button>
+        <button class="searchops-button searchops-button5" data="fromre">from-regex</button>
+        <button class="searchops-button searchops-button5" data="bodyre">body-regex</button>
+        <button class="searchops-button searchops-button5" data="tore">to-regex</button>
+        <button class="searchops-button searchops-button5" data="xnote" id = "xnote">XNote-search</button>
+    </div>
   </div>
-
 
   <script type="application/javascript" src="searchops.js"></script>
 </body>

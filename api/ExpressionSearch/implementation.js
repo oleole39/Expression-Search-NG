@@ -47,21 +47,22 @@ var ExpressionSearch = class extends ExtensionCommon.ExtensionAPI {
 
     registerResourceUrl(extension, "expressionsearch");
     userCSS = Services.io.newURI("resource://expressionsearch/skin/overlay.css", null, null);
-    let wind = Services.wm.getMostRecentWindow("mail:3pane");
 
-
-    if (wind != null) { // checks that 'wind' is neither null nor undefined, cf. https://stackoverflow.com/questions/2559318/how-to-check-for-an-undefined-or-null-variable-in-javascript#answer-15992131
-      let prefersDarkMode = wind.matchMedia("(prefers-color-scheme:dark)").matches; //  in  91:    -moz-toolbar-prefers-color-scheme:dark
-   //   console.log("dark", prefersDarkMode);
-      if (prefersDarkMode)
-        userCSS = Services.io.newURI("resource://expressionsearch/skin/overlaydark.css", null, null);
-      else
-        userCSS = Services.io.newURI("resource://expressionsearch/skin/overlay.css", null, null);
-    }
-    else userCSS = Services.io.newURI("resource://expressionsearch/skin/overlay.css", null, null);
-    /**/
-    // install userCSS, works for all document like userChrome.css, see https://developer.mozilla.org/en/docs/Using_the_Stylesheet_Service
-    // validator warnings on the below line, ignore it
+    //@CHANGE [ESNG 3.8.12] - Theme preference detection is now managed using a CSS media query defined in 'overlay.css'.   
+		//let wind = Services.wm.getMostRecentWindow("mail:3pane");
+		//if (wind != null) { // checks that 'wind' is neither null nor undefined, cf. https://stackoverflow.com/questions/2559318/how-to-check-for-an-undefined-or-null-variable-in-javascript#answer-15992131
+		  //let prefersDarkMode = wind.matchMedia("(prefers-color-scheme:dark)").matches; //  in  91:    -moz-toolbar-prefers-color-scheme:dark
+		  //console.log("dark", prefersDarkMode);
+		  //if (prefersDarkMode)
+		  //  userCSS = Services.io.newURI("resource://expressionsearch/skin/overlaydark.css", null, null); 
+		  //else
+		  //  userCSS = Services.io.newURI("resource://expressionsearch/skin/overlay.css", null, null);
+		//}
+		//else userCSS = Services.io.newURI("resource://expressionsearch/skin/overlay.css", null, null);
+		/**/
+		// install userCSS, works for all document like userChrome.css, see https://developer.mozilla.org/en/docs/Using_the_Stylesheet_Service
+		// validator warnings on the below line, ignore it
+	
     if (!sss.sheetRegistered(userCSS, sss.USER_SHEET)) {
       sss.loadAndRegisterSheet(userCSS, sss.USER_SHEET); // will be unregister when shutdown
     }

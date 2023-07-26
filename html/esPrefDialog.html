@@ -2,15 +2,13 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="esPrefDialog.css">
-  <link rel="stylesheet" href="popupmenu/popupmenu.css" />
+  <link rel="stylesheet" href="popups.css">
   <title>__MSG_dialog.title__</title>
 </head>
 
 <body>
   <!--HTML for virtual_folder_popup, will be created dynamically -->
-  <ul id="virtual_folder_popup" class="jqpopupmenu">
-  </ul>
+  <ul id="virtual_folder_popup" class="jqpopupmenu"></ul>
 
   <div class="vbox" id="expressionsearch-pane" label="__MSG_dialog.settings__">
     <div class="vbox">
@@ -78,7 +76,7 @@
         <div class="vbox">
           <div class="hbox">
             <div>__MSG_option.when_press_ctrl_plus_enter__</div>
-            <div id="virtual_folder_path" style="margin-left:5px" class="textLink" data-popupmenu="virtual_folder_popup"
+            <div id="virtual_folder_path" class="textLink" data-popupmenu="virtual_folder_popup"
               data-value="" data-preference="extensions.expressionsearch.virtual_folder_path"></div>
           </div>
           <div class="hbox">
@@ -98,7 +96,7 @@
             </select>
             <div class="tooltip" id="esResultsLabelTooltip">
               <div class="vbox">
-                <div style="margin-left: 120px">__MSG_option.results_label_size.tip__</div>
+                <div>__MSG_option.results_label_size.tip__</div>
                 <img src="/skin/results_label_size.jpg">
               </div>
             </div>
@@ -116,7 +114,7 @@
 
       <fieldset id="expressionsearch-pane-move2bar">
         <legend>__MSG_dialog.move2bar__</legend>
-        <div class="hbox" style="justify-content: space-around;">
+        <div class="hbox">
           <div class="hbox">
             <input type="radio" name="move2bar" data-preference="extensions.expressionsearch.move2bar"
               id="expressionsearch_move2nowhere" value="0">
@@ -184,16 +182,16 @@
 
       <fieldset id="expressionsearch-pane-help">
         <legend>__MSG_dialog.help__</legend>
-        <div class="hbox" style="align-items:center">
+        <div class="hbox">
           <div class="hbox">
-            <img id="expressionsearch-pane-help-paypal-link" style="cursor:pointer;" src="/skin/donate-with-paypal.png">
+            <img id="expressionsearch-pane-help-paypal-link" src="/skin/donate-with-paypal.png">
           </div>
-          <div class="textLink" style="margin:0 0 0 1em" id="expressionsearch-pane-help-file-textlink">
+          <div class="textLink" id="expressionsearch-pane-help-file-textlink">
             __MSG_option.help__</div>
-          <div class="textLink" style="margin:0 0 0 1em" id="expressionsearch-pane-help-github-textlink">
+          <div class="textLink" id="expressionsearch-pane-help-github-textlink">
             __MSG_option.issues__</div>
         </div>
-        <!--       <div class="textLink" style="margin:0 0 0 1em" id="expressionsearch-pane-help-otheraddons-textlink">
+        <!--       <div class="textLink" id="expressionsearch-pane-help-otheraddons-textlink">
           Other addons by Opto</div>
       </div>
       -->
@@ -201,7 +199,7 @@
     </div>
   </div>
 
-  <div class="hbox" style="justify-content: end">
+  <div id="save_button" class="hbox">
     <button id="save">__MSG_dialog.save__
   </div>
 

@@ -1,0 +1,527 @@
+/*
+ * License:  see License.txt
+
+ * Code  for TB 78 or later: Creative Commons (CC BY-ND 4.0):
+ *      Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0) 
+ 
+ * Copyright: Klaus Buecher/opto 2021
+ * Contributors:  see Changes.txt
+ */
+
+
+/***************************
+ * COLORS
+ * ************************/
+:host,
+:root {
+  --ESNG-color-black: black;
+  --ESNG-color-blue-0: #599AFC;
+  --ESNG-color-blue-1: blue;
+  --ESNG-color-blue-2: #00005A;
+  --ESNG-color-green: #22C473;
+  --ESNG-color-grey-0: #EEE;
+  --ESNG-color-grey-1: lightgrey;
+  --ESNG-color-grey-2: rgba(50,50,50,0.5);
+  --ESNG-color-grey-3: #6B717D;
+  --ESNG-color-grey-4: #23222B;
+  --ESNG-color-orange-0: #EF8204;
+  --ESNG-color-orange-1: #633B00;
+  --ESNG-color-red-0: #A64D79;
+  --ESNG-color-red-1: #F15A59;
+  --ESNG-color-red-2: #E20425;
+  --ESNG-color-red-3: #8F0222;
+  --ESNG-color-red-4: darkred;
+  --ESNG-color-white: white;
+  --ESNG-color-yellow-0: yellow;
+  --ESNG-color-yellow-1: #FCBB59;
+  --ESNG-color-purple: #A16AEC;
+}
+
+/***************************
+ * LIGHT THEME
+ * ************************/
+:host,
+:root {
+  --ESNG-popups-background-0: var(--ESNG-color-white);
+  --ESNG-popups-background-1: var(--ESNG-color-grey-0);
+  --ESNG-popups-background-2: var(--ESNG-color-grey-1);
+  --ESNG-popups-background-3: var(--ESNG-color-red-4);
+  --ESNG-popups-background-4: var(--ESNG-color-blue-0);
+  --ESNG-popups-background-5: var(--ESNG-color-red-1);
+  --ESNG-popups-background-6: var(--ESNG-color-yellow-1);
+  --ESNG-popups-background-7: var(--ESNG-color-purple);
+  --ESNG-popups-background-8: var(--ESNG-color-orange-0);
+  --ESNG-popups-background-9: var(--ESNG-color-red-2);
+  --ESNG-popups-background-10: var(--ESNG-color-green);
+    
+  --ESNG-popups-background-grad-1: var(--ESNG-color-red-4);
+  --ESNG-popups-background-grad-2: var(--ESNG-color-red-3);
+  --ESNG-popups-background-grad-3: var(--ESNG-color-red-2);
+  --ESNG-popups-background-grad-active-1: var(--ESNG-color-orange-1);
+  --ESNG-popups-background-grad-active-2: var(--ESNG-color-red-4);
+  --ESNG-popups-background-grad-active-3: var(--ESNG-color-orange-0);
+  
+  --ESNG-popups-border-0: var(--ESNG-color-grey-1);
+  --ESNG-popups-border-1: var(--ESNG-color-grey-2);
+  --ESNG-popups-border-2: var(--ESNG-color-black);
+  
+  --ESNG-popups-color-0: var(--ESNG-color-white);
+  --ESNG-popups-color-1: var(--ESNG-color-grey-3);
+  --ESNG-popups-color-2: var(--ESNG-color-blue-1);
+  --ESNG-popups-color-3: var(--ESNG-color-black);
+  --ESNG-popups-color-4: var(--ESNG-color-red-0);
+  --ESNG-popups-color-5: var(--ESNG-color-grey-3);
+  --ESNG-popups-color-6: var(--ESNG-color-grey-4);
+ 
+  --ESNG-popups-shadow-0: var(--ESNG-color-grey-0);
+  --ESNG-popups-shadow-1: var(--ESNG-color-grey-2);
+  
+  --ESNG-popups-test-1: var(--ESNG-color-yellow-0);
+  --ESNG-popups-test-2: var(--ESNG-color-blue-2);
+  --ESNG-popups-test-3: var(--ESNG-color-black);
+}
+
+/***************************
+ * DARK THEME
+ * ************************/
+
+@media (prefers-color-scheme: dark) {
+  :host,
+  :root {
+  --ESNG-popups-background-0: var(--ESNG-color-grey-4);
+  --ESNG-popups-background-1: var(--ESNG-color-grey-3);
+  --ESNG-popups-background-2: var(--ESNG-color-grey-3);
+  --ESNG-popups-background-3: var(--ESNG-color-red-4);
+  --ESNG-popups-background-4: var(--ESNG-color-blue-0);
+  --ESNG-popups-background-5: var(--ESNG-color-red-1);
+  --ESNG-popups-background-6: var(--ESNG-color-yellow-1);
+  --ESNG-popups-background-7: var(--ESNG-color-purple);
+  --ESNG-popups-background-8: var(--ESNG-color-orange-0);
+  --ESNG-popups-background-9: var(--ESNG-color-red-2);
+  --ESNG-popups-background-10: var(--ESNG-color-green);
+  
+  --ESNG-popups-background-grad-1: var(--ESNG-color-red-4);
+  --ESNG-popups-background-grad-2: var(--ESNG-color-red-3);
+  --ESNG-popups-background-grad-3: var(--ESNG-color-red-2);
+  --ESNG-popups-background-grad-active-1: var(--ESNG-color-orange-1);
+  --ESNG-popups-background-grad-active-2: var(--ESNG-color-red-4);
+  --ESNG-popups-background-grad-active-3: var(--ESNG-color-orange-0);
+  
+  --ESNG-popups-border-0: var(--ESNG-color-grey-3);
+  --ESNG-popups-border-1: var(--ESNG-color-grey-2);
+  --ESNG-popups-border-2: var(--ESNG-color-black);
+  
+  --ESNG-popups-color-0: var(--ESNG-color-white);
+  --ESNG-popups-color-1: var(--ESNG-color-blue-0);
+  --ESNG-popups-color-2: var(--ESNG-color-yellow-1);
+  --ESNG-popups-color-3: var(--ESNG-color-grey-0);
+  --ESNG-popups-color-4: var(--ESNG-color-red-1);
+  --ESNG-popups-color-5: var(--ESNG-color-grey-1);
+  --ESNG-popups-color-6: var(--ESNG-color-grey-4);
+    
+  --ESNG-popups-shadow-0: var(--ESNG-color-grey-2);
+  --ESNG-popups-shadow-1: var(--ESNG-color-grey-2);
+  
+  --ESNG-popups-test-1: var(--ESNG-color-yellow-0);
+  --ESNG-popups-test-2: var(--ESNG-color-blue-2);
+  --ESNG-popups-test-3: var(--ESNG-color-black);
+  }
+}
+
+/***************************
+ * COMMON
+ * ************************/
+ 
+html{
+	background-color: var(--ESNG-popups-background-0);
+	color: var(--ESNG-popups-color-3);
+}
+
+html a{
+	color: var(--ESNG-popups-color-2);
+}
+
+::placeholder{
+  color: var(--ESNG-popups-color-5);	
+}
+
+input, textarea, select, input::-webkit-outer-spin-button, input::-webkit-inner-spin-button  {
+  background-color: var(--ESNG-popups-background-0);
+  color: var(--ESNG-popups-color-3);
+}
+
+#innerwrapper {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#innerwrapper button{
+  background-color: var(--ESNG-popups-background-0);
+  color: var(--ESNG-popups-color-3);
+}
+
+.neon-title h1, .neon-title h2, .neon-title h3  {
+  font-family: "Impact","Haettenschweiler","Franklin Gothic Bold","Charcoal","Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
+  text-align: center;
+  color: var(--ESNG-popups-color-1);
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  /* https://designshack.net/articles/css/inner-shadows-in-css-images-text-and-beyond/ */
+  text-shadow:
+       3px 3px 0 var(--ESNG-popups-shadow-0),
+     -1px -1px 0 var(--ESNG-popups-shadow-0),
+      1px -1px 0 var(--ESNG-popups-shadow-0),
+      -1px 1px 0 var(--ESNG-popups-shadow-0),
+       1px 1px 0 var(--ESNG-popups-shadow-0);
+}
+
+.neon-title h1 {
+  font-size: 20pt;
+}
+
+.neon-title h2 {
+  font-size: 16pt;
+  font-weight: normal;
+}
+
+.neon-title h3 {
+  font-size: 13pt;
+}
+
+.center-text{
+  text-align:center;
+}
+
+/***************************
+ * INSTALL & UPDATE PAGES
+ * ************************/
+
+.actionlinks {
+  text-align: center;
+  margin: 2em 0 4em 0;
+}
+
+.actionlinks a {
+  background-color: var(--ESNG-popups-background-3);
+  box-shadow: 5px 5px 5px var(--ESNG-popups-shadow-1);
+  color: var(--ESNG-popups-color-0);
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+.actionlinks a:hover {
+  background-image: linear-gradient(to bottom, var(--ESNG-popups-background-grad-1) 0%, var(--ESNG-popups-background-grad-2) 34%, var(--ESNG-popups-background-grad-3) 100%);
+}
+
+.actionlinks a:active {
+  background-image: linear-gradient(to bottom, var(--ESNG-popups-background-grad-active-1) 0%, var(--ESNG-popups-background-grad-active-2) 34%, var(--ESNG-popups-background-grad-active-3) 100%);
+}
+
+/***************************
+ * SEARCHOPS POPUP
+ * ************************/
+.searchops-button {
+	background-color: var(--ESNG-popups-background-2);
+	border: none;
+	color: var(--ESNG-popups-color-3);
+	padding: 8px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+.searchops-button1 {
+	border-radius: 2px;
+}
+
+.searchops-button2 {
+	border-radius: 4px;
+}
+
+.searchops-button3 {
+	border-radius: 8px;
+}
+
+.searchops-button4 {
+	border-radius: 12px;
+}
+
+.searchops-button5 {
+	border-radius: 50%;
+}
+
+.vl {
+	border-left: 6px solid var(--ESNG-popups-border-0);
+	margin-right: 4px;
+	visibility: hidden;
+}
+
+.searchops-group{
+	display:inline-block;
+}
+
+.searchops-group button{
+	color: var(--ESNG-popups-color-6);
+	color: var(--ESNG-popups-color-6);
+}
+
+#searchops-group-1 button{
+	background-color: var(--ESNG-popups-background-4);
+}
+
+#searchops-group-2 button{
+	background-color: var(--ESNG-popups-background-5);
+}
+
+#searchops-group-3 button{
+	background-color: var(--ESNG-popups-background-6);
+}
+
+#searchops-group-4 button{
+	background-color: var(--ESNG-popups-background-7);
+}
+
+#searchops-group-5 button{
+	background-color: var(--ESNG-popups-background-8);
+}
+
+#searchops-group-6 button{
+	background-color: var(--ESNG-popups-background-9);
+}
+
+#searchops-group-7 button{
+	background-color: var(--ESNG-popups-background-10);
+}
+
+/***************************
+ * ABOUT PAGE
+ * ************************/
+.full-height {
+  height: 100%;
+}
+
+.flex-container {
+  display: flex;
+  margin: 0;
+}
+
+.framed-container {
+  display: flex;
+  flex-flow: column;
+  padding:1ex;
+  flex: 1;
+  border: 1px solid var(--ESNG-popups-border-1);
+  margin: 8px;
+}
+
+.about-info {
+  flex: 1;
+}
+
+.about-info h2 {
+  font-size: 130%;
+  margin-bottom: 2px;
+}
+
+.about-info p {
+  font-size: 90%;
+  margin-top: 2px;
+}
+
+/***************************
+ * DONATIONS
+ * ************************/
+.donations h1, .donations h2, .donations h3{
+  color: var(--ESNG-popups-color-4);
+}
+
+/***************************
+ * HELP PAGE
+ * ************************/
+#helpcontent {
+  max-width: 1000px;
+  max-height: 800px;
+}
+
+#helpcontent a {
+
+}Z
+
+/***************************
+ * CHANGELOG
+ * ************************/
+.bz_closed {
+  color: var(--ESNG-popups-color-1);
+}
+
+.bz_closed a {
+  text-decoration: line-through;
+  color: var(--ESNG-popups-color-1);
+}
+
+/***************************
+ * PREFS PAGE
+ * ************************/
+div.vbox {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+div.hbox {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#expressionsearch-pane input, #expressionsearch-pane select, #expressionsearch-pane textarea {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+#expressionsearch-pane-help-paypal-link{
+  cursor: pointer;
+}
+
+#expressionsearch-pane-help .textLink{
+  margin-left: 1em;
+}
+
+#expressionsearch-pane-move2bar > .hbox{
+  justify-content: space-around;
+}
+
+#expressionsearch-pane-help > .hbox{
+  align-items: center;
+}
+
+#save_button{
+ justify-content: end;
+}
+
+#save{
+  padding: 0.5em;
+}
+
+.sup {
+  position: relative;
+  top: -1ex;
+  font-size: 80%;
+}
+
+.textLink {
+  color: var(--ESNG-popups-color-2);
+  cursor: pointer;
+  text-decoration: underline;
+  margin: 0 0.2em;
+}
+
+.tooltip {
+  position: absolute;
+  display: none;
+  border: 1px solid var(--ESNG-popups-border-2);
+  border-radius: 5px;
+  background: var(--ESNG-popups-background-1);
+  padding: 5px;
+}
+
+#esResultsLabelTooltip > .vbox > div {
+  margin-left:120px;
+}
+
+.jqpopupmenu,
+.jqpopupmenu ul {
+  /*topmost and sub ULs, respectively*/
+  font: normal 13px Verdana;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  list-style-type: none;
+  background: var(--ESNG-popups-background-0);
+  border: 1px solid var(--ESNG-popups-border-2);
+  display: none;
+  /*collapse all sub menus to begin with*/
+  box-shadow: 3px 3px 8px var(--ESNG-popups-shadow-1);
+  /*shadow for CSS3 capable browsers.*/
+  -moz-box-shadow: 3px 3px 8px var(--ESNG-popups-shadow-1);
+}
+
+.jqpopupmenu li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.jqpopupmenu li a {
+  display: block;
+  color: var(--ESNG-popups-color-3);
+  background: var(--ESNG-popups-background-1);
+  border-bottom: 1px solid var(--ESNG-popups-border-2);
+  text-decoration: none;
+  padding: 4px 5px;
+  cursor: pointer;
+}
+
+.jqpopupmenu li.arrow > a:after {
+  content: url('arrow.gif');
+  margin-left: 15px;
+}
+
+.jqpopupmenu li a:hover,
+.jqpopupmenu li.selected>a {
+  background: var(--ESNG-popups-background-1);
+}
+
+.rightarrowclass {
+  position: absolute;
+  top: 6px;
+  right: 5px;
+}
+
+/***************************
+ * DEPRECATED ?
+ * ************************/
+.versionnumber {
+  color: var(--ESNG-popups-background-1);
+}
+
+.notice {
+  color: red;
+  font-weight: bold;
+}
+
+.actionlinks div {
+  background-color: var(--ESNG-popups-background-3);
+  box-shadow: 5px 5px 5px var(--ESNG-popups-shadow-1);
+  color: var(--ESNG-popups-color-0);
+  padding: 5px 8px;
+}
+
+.actionlinks div:active {
+  background-image: linear-gradient(to bottom, var(--ESNG-popups-background-grad-active-1) 0%, var(--ESNG-popups-background-grad-active-2) 34%, var(--ESNG-popups-background-grad-active-3) 100%);
+}
+
+/***************************
+ * TEST
+ * ************************/
+
+ .testversion {
+  box-shadow: inset 0 0 10px var(--ESNG-popups-test-3;
+  padding: 1em;
+  font-style: italic;
+  background-color: var(--ESNG-popups-test-2); /* dark blue */
+}
+
+.testversion p {
+  background-color: var(--ESNG-popups-test-2); /* dark blue */
+  color: var(--ESNG-popups-test-1) !important;
+  font-weight: bold;
+}

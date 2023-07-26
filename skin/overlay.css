@@ -1,5 +1,70 @@
+/***************************
+ * COLORS
+ * ************************/
+:host,
+:root {
+  --ESNG-color-transparent: transparent;
+  --ESNG-color-white-0: white;
+  --ESNG-color-white-1: #ffffe1;
+  --ESNG-color-yellow: yellow;
+  --ESNG-color-blue-0: lightblue;
+  --ESNG-color-blue-1: blue;
+  --ESNG-color-green-0: lightgreen;
+  --ESNG-color-green-1: green;
+  --ESNG-color-red-0: #f66;
+  --ESNG-color-red-1: red;
+  --ESNG-color-grey: grey;
+  --ESNG-color-purple: purple;
+  --ESNG-color-black: black;
+}
+
+/***************************
+ * LIGHT THEME
+ * ************************/
+:host,
+:root {
+  --ESNG-overlay-background-0: var(--ESNG-color-transparent);
+
+  --ESNG-overlay-color-0: var(--ESNG-color-blue-1);
+  --ESNG-overlay-color-1: var(--ESNG-color-green-1);
+  --ESNG-overlay-color-2: var(--ESNG-color-blue-1);
+  --ESNG-overlay-color-3: var(--ESNG-color-purple);
+  --ESNG-overlay-color-4: var(--ESNG-color-red-0);
+  --ESNG-overlay-color-5: var(--ESNG-color-white-1);
+  --ESNG-overlay-color-6: var(--ESNG-color-grey);
+  --ESNG-overlay-color-7: var(--ESNG-color-green-1);
+  --ESNG-overlay-color-8: var(--ESNG-color-black);
+
+  --ESNG-overlay-border-0: var(--ESNG-color-red-1);
+}
+
+/***************************
+ * DARK THEME
+ * ************************/
+@media (prefers-color-scheme: dark) {
+  :host,
+  :root {
+  --ESNG-overlay-background-0: var(--ESNG-color-transparent);
+
+  --ESNG-overlay-color-0: var(--ESNG-color-blue-0);
+  --ESNG-overlay-color-1: var(--ESNG-color-green-0);
+  --ESNG-overlay-color-2: var(--ESNG-color-white-0);
+  --ESNG-overlay-color-3: var(--ESNG-color-yellow);
+  --ESNG-overlay-color-4: var(--ESNG-color-red-0);
+  --ESNG-overlay-color-5: var(--ESNG-color-white-1);
+  --ESNG-overlay-color-6: var(--ESNG-color-white-0);
+  --ESNG-overlay-color-7: var(--ESNG-color-green-1);
+  --ESNG-overlay-color-8: var(--ESNG-color-black);
+
+  --ESNG-overlay-border-0: var(--ESNG-color-red-1);
+  }
+}
+
+/***************************
+ * OVERLAY
+ * ************************/
 .textlink {
-  color: blue;
+  color: var(--ESNG-overlay-color-0);
   cursor: pointer;
   text-decoration: underline;
 }
@@ -11,29 +76,29 @@
 
 /* InfoBackground, the CSS2 color was deprecated, is black in Ubuntu */
 #expression-search-tooltip.forceInfo {
-  background-color: #ffffe1 !important;
+  background-color: var(--ESNG-overlay-color-5) !important;
   -moz-appearance: none !important;
 }
 
 .tooltip-token {
   font-weight: bold;
-  color: green;
+  color: var(--ESNG-overlay-color-1);
 }
 
 .tooltip-info {
-  color: blue;
+  color: var(--ESNG-overlay-color-2);
 }
 
 .tooltip-match {
-  color: purple;
+  color: var(--ESNG-overlay-color-3);
 }
 
 .tooltip-term {
-  color: grey;
+  color: var(--ESNG-overlay-color-6);
 }
 
 .customHeadersShow{
-  color: grey;
+  color: var(--ESNG-overlay-color-6);
 }
 
 .expressionsearch_pref_input {
@@ -57,18 +122,18 @@
   width: 600px;
   -moz-box-flex: 1;
   flex: 1;
-  background-color: transparent;
+  background-color: var(--overlay-background-0);
   background-image: inherit;
-  border: 0 solid red; /* for TB5, force no border */
+  border: 0 solid var(--overlay-border-0); /* for TB5, force no border */
 }
 
 /* fix the result label color issue when placed on menubar/toolbar/tabbar */
 #qfb-results-label[filterActive="matches"] {
-  color: green;
+  color: var(--ESNG-overlay-color-7);
 }
 
 #qfb-results-label[filterActive="nomatches"] {
-  color: #f66;
+  color: var(--ESNG-overlay-color-4);
 }
 
 /* force show or hide button & it's text */
@@ -102,6 +167,5 @@
 }
 
 .menuli  {
-
-  border: solid black 1px;
+  border: solid var(--ESNG-overlay-color-8) 1px;
 }
